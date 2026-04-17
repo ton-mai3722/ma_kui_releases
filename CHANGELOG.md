@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.6.6+17] - 2026-04-17
+
+### Added
+- **Feature: Hard Account Delete**: Implemented a secure REST-based account deletion system (Hard Delete) that completely wipes user data, Firebase Auth, and local session for full privacy compliance.
+- **Feature: Chat Deletion**: Added a "Delete Chat" option to the long-press channel menu, allowing users to permanently remove conversations with a safety confirmation dialog.
+- **UX: Contact List Pull-to-Refresh**: Added RefreshIndicator support to the Contact screen, including the empty state, for a smoother user experience.
+
+### Fixed
+- **Audio: Focus Hijack Fix**: Resolved a critical issue where the app would stop background music (Spotify, etc.) and switch the system to "Call Mode" audio upon opening.
+- **Sync: Message Read Status**: Permanently fixed the bug where messages were marked as "Read" automatically by disabling unstable offline persistence (Offline Storage).
+- **UI: Realistic Splash Transitions**: Re-calibrated the atmospheric splash time engine to stay bright well into the late afternoon (5:30 PM), ensuring a better match with real-world lighting.
+- **Bug: SDK API Compatibility**: Fixed multiple "method undefined" errors caused by recent Stream Chat SDK v9.23.0 updates.
+
+### Changed
+- **Architecture: Cloud-Only Sync**: Shifted to a purely real-time server-synced state to ensure 100% accurate read/unread status indicators.
+
 ## [1.6.5+16] - 2026-04-17
 
 ### Added

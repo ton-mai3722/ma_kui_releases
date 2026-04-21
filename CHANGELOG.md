@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.0+18] - 2026-04-21
+
+### Added
+- **Feature: Missed Call Notifications**: Implemented an automated logging system where the caller's app sends a "Missed Call" or "Call Ended" message directly to the chat channel when a call is not answered or finished.
+- **Feature: Voice Calling Restoration**: Re-enabled the Voice Call action button and optimized the Stream Video initialization lifecycle for immediate availability upon login.
+
+### Fixed
+- **Stability: Sticker Sending Pipeline**: Fixed a critical "Null check operator" crash occurring during sticker uploads. Refactored the system to bypass the SDK's file upload pipeline by leveraging `Message.extraData` for remote sticker assets.
+- **Initialization: Stream Video Client**: Fixed a logic bug where the video client was not initializing during the user connection phase, preventing calls from being initiated.
+- **UX: Zero-Width Validation**: Resolved a Stream SDK validation error ("Message is not valid") for stickers by implementing invisible zero-width space characters as message text.
+
+### Changed
+- **UI: Visual Harmony**: Updated the application CI and icon set to a cohesive Vibrant Blue/Purple aesthetic, ensuring consistent premium branding across all touchpoints.
+- **UX: Sticker Bubble Rendering**: Updated Chat Bubbles to intelligently detect and render stickers from extraData while maintaining backward compatibility with legacy attachment-based stickers.
+
 ## [1.6.6+17] - 2026-04-17
 
 ### Added

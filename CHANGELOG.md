@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.7.1+19] - 2026-04-21
+
+### Fixed
+- **UX: Channel List Sticker Preview**: Resolved an issue where stickers sent via the new metadata system appeared invisible in the conversation list. The preview now correctly shows `🎨 [สติ๊กเกอร์]`.
+- **UX: Message Preview Reliability**: Updated the `_preview` logic to explicitly identify stickers and call logs from message metadata for consistent display across the app.
+
+### Changed
+- **Maintenance**: Refined the sticker message payload text to ensure valid message synchronization while remaining hidden in the chat bubble UI.
+- **UI: Feature Cleanup**: Temporarily disabled voice call buttons in the chat room and removed unused typing indicator imports to reduce technical debt.
+
 ## [1.7.0+18] - 2026-04-21
 
 ### Added

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.8.0+20] - 2026-04-23
+
+### Added
+- **Feature: In-Splash Update Checker**: Integrated a proactive version verification system directly into the Splash Screen. Users are now instantly notified of new updates upon app launch.
+- **UI: Premium Update Modal**: Designed a high-end, brand-consistent update dialog with "Update Now" and "Later" options, supporting both optional and mandatory (force) updates.
+- **UX: Smart Force Update**: Implemented a security-first "Force Update" mode that locks the app until critical updates are installed, ensuring all users stay on safe and compatible versions.
+
 ## [1.7.1+19] - 2026-04-21
 
 ### Fixed

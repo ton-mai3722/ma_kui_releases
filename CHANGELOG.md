@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.9.0+21] - 2026-04-24
+
+### Added
+- **Architecture: Clean Architecture Migration**: Complete overhaul of the Authentication module into a robust Clean Architecture (Data, Domain, Presentation Layers).
+- **Bloc: Event-Driven Authentication**: Transitioned from Cubit to BLoC for superior state management, predictability, and improved error handling.
+- **Security: Session Verification**: Implemented a mandatory Firebase session check in the Splash Screen to ensure user validity before entering the app.
+- **UX: Improved Success Flow**: Success redirects (Login/Register) now pass through the Splash Screen for a premium entrance animation and final data synchronization.
+- **UI: Active Status Indicator**: Added real-time "Green Dot" (Online) indicators to the chat list, including a smooth glow effect.
+- **UI: Premium Toast System**: Replaced all default snackbars with a custom, high-end notification system:
+    - 4 state-aware designs (Success, Info, Warning, Error).
+    - **Top-aligned positioning** (slides down from top) for better visibility and non-intrusive UX.
+    - Floating layout with glassmorphism shadows and smooth animations.
+    - Matches the new brand aesthetic with icon circles and structured typography.
+- **Features: Notification Management**: Implemented a comprehensive notification settings screen with:
+    - Master switch for app-wide notifications.
+    - "Quiet Hours" (DND) mode with customizable start/end times.
+    - Dual synchronization (Local storage + Firebase Cloud Sync).
+- **Localization: Friendly Error Messages**: Integrated `ErrorMapper` to translate technical Firebase exceptions into user-friendly Thai messages.
+
+### Changed
+- **Codebase: Repository Pattern**: Encapsulated business logic into UseCases (Login, Register, Logout, etc.) for better testability and reuse.
+- **Cleanup**: Removed obsolete `AuthCubit` and `AuthState` files to reduce technical debt.
+
+
 ## [1.8.0+20] - 2026-04-23
 
 ### Added

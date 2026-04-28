@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.1.0+24] - 2026-04-28
+
+### Added
+- **Feature: Global Message Search**: Implemented a powerful search engine allowing users to search across all conversations from the home screen.
+- **Feature: In-Chat Search**: Added a dedicated search button within chat rooms to find specific messages in that conversation.
+- **UI: Messenger-Style Input Bar**: Overhauled the message input with:
+    - Dedicated **Camera** and **Gallery** icons on the left for faster media sharing.
+    - Vibrant, diverse color palette for action icons (Blue/Pink/Purple).
+    - Intelligent **Sticker Picker** with auto-focus management (closes when typing).
+- **UI: Glassmorphism 2.0**: Applied high-end glass effects (BackdropFilter) to the AppBar and Message Input for a seamless blend with the dynamic background.
+- **Security: Secure Account Deletion**: Added a re-authentication step (password check) before hard-deleting an account for enhanced security.
+- **UI: Opponent User Profile**: Added an "info" button in the Chat Room AppBar to view the other person's profile details in a premium bottom sheet.
+
+### Fixed
+- **Stability: Stream Search SDK Integration**: Fixed positional argument and pagination parameter errors in the `client.search` method.
+- **Bug: Type Mismatch in Search Results**: Resolved a `ChannelModel` vs `Channel` type conflict when navigating from search results to a chat room.
+- **UX: Input Focus**: Fixed an issue where the sticker picker wouldn't close when tapping the text field.
+
 ## [2.0.1+23] - 2026-04-28
 
 ### Added

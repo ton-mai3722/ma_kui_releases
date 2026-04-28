@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.1+23] - 2026-04-28
+
+### Added
+- **System: FCM Broadcast Support**: Integrated `app_updates` topic subscription for global update notifications.
+- **System: Admin Broadcast Tool**: Created `scripts/broadcast_admin.py` to send direct update links to all users via a "MaKui Admin" chat persona.
+- **UI: Clickable Links in Chat**: Implemented `flutter_linkify` in `MakuiBubble` to automatically detect and open URLs in the system browser.
+- **UI: Reaction Update**: Changed the heart reaction from black to a vibrant red emoji (`❤️`) for consistent branding.
+- **UX: Update Fallback**: Added a "Open in Browser" option to the update download dialog for manual installation if the in-app downloader fails.
+
+### Fixed
+- **Navigation: Notification Priority**: Refactored `NotificationService` to ensure update notifications take precedence over chat navigation, resolving "no-op" clicks.
+- **Build: Pubspec Integrity**: Resolved duplicate mapping key errors in `pubspec.yaml` to ensure stable dependency resolution.
+
 ## [2.0.0+22] - 2026-04-28
 
 ### Added

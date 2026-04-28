@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0+22] - 2026-04-28
+
+### Added
+- **UI: Message Reaction System**: Implemented a high-end, glassmorphic reaction picker with:
+    - 6 core emotional reactions (Love, Like, Haha, Wow, Sad, Angry).
+    - Smooth entry animations (Elastic Out) and staggered micro-animations for icons.
+    - Glassmorphism design with BackdropFilter blur and semi-transparent borders.
+    - Integrated Haptic Feedback for a premium tactile feel.
+- **UI: Message Quick Actions**: Added a "Copy" shortcut directly within the reaction picker for improved message management.
+
+### Fixed
+- **Stability: Call Connectivity Overhaul**: Resolved persistent call rejection errors by:
+    - Optimizing the Stream Video initialization lifecycle.
+    - Moving media hardware configuration before the join handshake to prevent contention.
+    - Refactoring the call lifecycle to handle UI state transitions more robustly.
+- **UI: Splash Screen Branding**: Updated the splash screen icon to align with the latest premium design system.
+
+
 ## [1.9.0+21] - 2026-04-24
 
 ### Added
@@ -15,11 +33,14 @@ All notable changes to this project will be documented in this file.
     - **Top-aligned positioning** (slides down from top) for better visibility and non-intrusive UX.
     - Floating layout with glassmorphism shadows and smooth animations.
     - Matches the new brand aesthetic with icon circles and structured typography.
+- **UI: Rich Link Preview**: Integrated automatic URL metadata parsing and rendering in chat bubbles.
 - **Features: Notification Management**: Implemented a comprehensive notification settings screen with:
     - Master switch for app-wide notifications.
     - "Quiet Hours" (DND) mode with customizable start/end times.
     - Dual synchronization (Local storage + Firebase Cloud Sync).
 - **Localization: Friendly Error Messages**: Integrated `ErrorMapper` to translate technical Firebase exceptions into user-friendly Thai messages.
+- **DevOps: Smart APK Naming**: Implemented automatic APK renaming during the build process. Output files are now named `App-Makui-[version].apk` for better version tracking.
+- **DevOps: Deployment Script Update**: Enhanced `scripts/deploy.py` to support dynamic filenames and improved asset management on GitHub Releases.
 
 ### Changed
 - **Codebase: Repository Pattern**: Encapsulated business logic into UseCases (Login, Register, Logout, etc.) for better testability and reuse.

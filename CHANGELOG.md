@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.2.0+25] - 2026-04-29
+
+### Added
+- **Feature: Friend Relationship Persistence**: Automatically stores newly added friends' metadata (Name, ID, Avatar, Timestamp) in Firestore for persistent tracking.
+- **Feature: Legacy Friend Synchronization**: Implemented a "Sync All Friends" engine that automatically migrates existing Stream Chat contacts to Firestore upon app update, ensuring full cross-device consistency.
+- **System: Version-Aware Sync**: Optimized background synchronization to run once per version update, leveraging both local and cloud flags (Firebase) to minimize resource usage.
+
+### Changed
+- **UX: Swipe-to-Reply Refinement**: Fine-tuned swipe sensitivity (`swipeSensitivity: 15`) to prevent accidental triggers.
+- **UI: Reply Preview Overhaul**: Redesigned the reply preview UI for a more compact, premium aesthetic with frosted glass effects (`BackdropFilter`) and gradient borders.
+
+### Fixed
+- **Bug: Undefined Name 'widget'**: Resolved a scope issue in `ContactScreen` by moving the QR menu into the State class.
+- **Bug: DI Dependency Chain**: Fixed an "Undefined name 'addFriendUseCase'" error in `main.dart` by correctly injecting the UseCase into the application root.
+
 ## [2.1.0+24] - 2026-04-28
 
 ### Added

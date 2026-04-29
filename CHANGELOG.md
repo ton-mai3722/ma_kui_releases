@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.3.0+26] - 2026-04-29
+
+### Added
+- **Feature: High-Performance Profile Stats**: Overhauled the profile statistics system (Posts, Friends, Likes) to use a high-performance counter-based approach stored directly in the `users` collection.
+- **Feature: Auto-Recalculation Engine**: Implemented a post-update synchronization system that automatically recalculates and migrates user stats from Firestore sub-collections and Stream Chat channels upon the first launch of a new version.
+- **System: Real-Time Stats Sync**: Integrated real-time increments for post counts, friend counts, and total likes across the feed and chat systems.
+
+### Fixed
+- **UI: Image Cropper Overlap**: Resolved a critical layout issue where the image cropper overlapped the Android status bar by implementing a custom `Theme.UCrop` and `AndroidUiSettings` configuration.
+- **UI: Profile Sync Stability**: Added a stats reload trigger after profile updates to ensure the UI immediately reflects name, bio, and image changes.
+- **Architecture: Profile Stat Protection**: Implemented a filter in `updateFirestoreUser` to prevent accidental overwriting of statistical counters with stale metadata from external sources.
+
 ## [2.2.0+25] - 2026-04-29
 
 ### Added

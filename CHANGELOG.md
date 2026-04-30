@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.4.0+27] - 2026-04-30
+
+### Added
+- **Feature: Widget Screenshot Share**: Replaced standard image sharing with a high-resolution widget capture system. Users can now share a complete screenshot of the post card (including user header, text, and media) as a single PNG image.
+- **System: Soft Delete Filtering**: Implemented a comprehensive filtering system that excludes posts marked with `isDeleted: true` from the Feed datasource and Profile stream.
+
+### Fixed
+- **Bug: Post Deletion Sync**: Fixed a critical issue where deleted posts remained visible on the Feed and Profile pages.
+- **Bloc: Instant Feed UI Update**: Added `RemovePostEvent` to `FeedBloc` for immediate UI removal of posts upon successful soft deletion.
+- **Model: Entity Flag Integration**: Added `isDeleted` persistence to the `Post` entity and `PostModel` to ensure consistent state across app sessions.
+
 ## [2.3.0+26] - 2026-04-29
 
 ### Added

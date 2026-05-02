@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.5.0+28] - 2026-05-02
+
+### Added
+- **Feature: Voice Messaging System**: Implemented a robust "hold-to-record" voice messaging system within the chat input, complete with a custom `_VoiceMessagePlayer` for seamless local and remote playback.
+- **Feature: Voice Call Restoration**: Re-enabled the voice-call-only button in the chat room header, allowing users to initiate audio calls without video controls.
+- **UI: Story Upload Progress**: Added a dynamic, dashed circular loading indicator around the user's avatar when a Story is actively uploading. The avatar gracefully returns to a normal (un-viewed) state with standard colors once the upload completes.
+- **UX: Story Upload Feedback**: Removed intrusive Toasts during the Story upload process to ensure a cleaner, uninterrupted user experience.
+
+### Fixed
+- **Build: Dependency Conflict Resolution**: Resolved platform-specific compilation errors by manually patching the cached `record_linux` implementation and updating package constraints.
+- **UI: Input Widget Architecture**: Refactored `MakuiInput` to eliminate structural corruption and nested syntax errors, restoring stable chat input functionality.
+- **Cleanup**: Removed obsolete and commented-out code for friend request overlays, improving code maintainability.
+
 ## [2.4.0+27] - 2026-04-30
 
 ### Added

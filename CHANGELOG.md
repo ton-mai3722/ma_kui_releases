@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.6.0+29] - 2026-05-17
+
+### Added
+- **Feature: Ultimate 3D Floating Pop-out (Hero Animation)**: Overhauled the profile and cover photo fullscreen viewer with a high-end bouncing spring transition (`Curves.easeOutBack`) and scale animation.
+- **UI: 3D Liftoff Shadow Shuttler**: Built a custom flight shuttle builder (`_buildFlightShuttle`) that generates a growing black drop shadow as widgets fly, creating an immersive depth/lifting-off effect. Supports round shadows for circular avatars and sharp rectangle-to-rounded-rectangle shadows for covers.
+- **UI: Premium Glass Blur Backdrop**: Upgraded `HeroImagePreview` to dynamically blur and fade the background canvas (`sigmaX: 0 -> 16`, opacity `0.0 -> 0.92`) based on the entry progress.
+- **UI: Floating Headers**: Added smooth, springy sliding entrances for the Close button and image Title from the top of the screen during pop-out.
+- **UX: Full-Area Interactive Cover**: Unified translucent AppBars and top spacers into a highly responsive gesture detector, turning the previously dead cover image area into a 100% tappable preview zone.
+
+### Fixed
+- **UI: Hero White Flashing & Flickering**: Wrapped all Hero image subtrees on both source and destination sides in transparent, hardware-accelerated `Material` widgets, completely eliminating light theme color inheritance and white blinking during the transition flight.
+
 ## [2.5.0+28] - 2026-05-02
 
 ### Added

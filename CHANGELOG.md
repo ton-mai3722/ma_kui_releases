@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.7.0+30] - 2026-09-16
+
+### Added
+- **Feature: Full Light & Dark Theme System**: Comprehensive theming overhaul featuring dynamic system-wide ThemeMode switching (Light / Dark / System Default) backed by persistent storage (`SharedPreferences`).
+- **UI: Full-App Dark/Light Adaptation**: Converted every screen to support dynamic theme colors with seamless contrast and glassmorphic styling:
+    - **Feed & Post Details**: Themed cards, bottom sheets, comments, reaction pickers, and input fields.
+    - **Edit Profile & Create Post**: Theme-aware input fields, category chips, media pickers, and modal bottom sheets.
+    - **Chat & Contacts**: Customized bubble palettes, input bars, search overlays, and contact list rows.
+    - **Settings Screen**: Interactive visual theme switcher with real-time preview and instant persistence.
+    - **Adaptive Splash Screen**: Dynamic theme-aware background (`#0A0F1D` vs `#F8FAFC`), system UI overlay bar styling, ambient glowing orbs, particles, glass logo container, and update dialogs.
+- **Feature: Expired Story Archive (คลังสตอรี่)**: Added an Instagram/Facebook-style story archive accessible from the user's Profile screen:
+    - **Interactive Views**: Flexible toggle between a 3-column Month-Grouped **Grid View** (with media thumbnails, expiry markers, and duration tags) and a **Timeline View** (chronological story cards with media preview, relative time, and view metrics).
+    - **Story Archive Replay**: Full-screen story playback integration via `StoryViewerScreen` marked with a distinctive "คลังสตอรี่" archive badge.
+    - **Clean Architecture Flow**: Fully decoupled architecture (`FeedRemoteDataSource.getUserStoryArchive`, `FeedRepository`, `GetUserStoryArchiveUseCase`).
+- **UI: Redesigned Profile Statistics Pods**: Replaced legacy flat box stat containers with 3 interactive floating micro-pods:
+    - Vibrant gradient squircle icons for **Posts** (Indigo/Violet), **Friends** (Cyan/Blue), and **Likes** (Rose/Pink).
+    - Smart compact number formatting (e.g., 1.2K, 15.4K) and fluid micro-interaction touch feedback across `ProfileScreen` and `UserProfileScreen`.
+- **Feature: Facebook-Style GPS Location Picker**: Integrated an intelligent nearby places scanner for post creation with live GPS coordinate resolution, distance badges, and capsule search.
+
+### Fixed
+- **UI: Theme Inconsistencies**: Fixed unreadable text, hardcoded background colors, and dialog theme deprecations across all dialogs, bottom sheets, and input fields.
+
 ## [2.6.0+29] - 2026-05-17
 
 ### Added

@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.0.0+31] - 2026-09-18
+
+### Added
+- **Brand: Major Rebrand & Identity Overhaul (การรีแบรนด์ครั้งใหญ่สู่ TellMate)**:
+    - **New Visual Identity**: ปรับโฉมภาพลักษณ์ใหม่สู่ TellMate พร้อมโลโก้ เครื่องหมายการค้า และสไตล์ภาพระดับพรีเมียม
+    - **Adaptive App Icons**: เพิ่มชุดไอคอนแอปใหม่รองรับ Light, Dark และ Monochrome (Themed Icons บน Android 13+) รวมถึง iOS App Icon Tinted
+    - **Refreshed Design System**: อัปเกรดระบบดีไซน์ โทนสี Gradient และแอนิเมชัน Loading ใหม่ (`TellmateLoading`)
+- **Feature: Universal QR Code Cross-Platform Login (สแกน QR เข้าสู่ระบบ)**:
+    - **Multi-Device Session Sync**: Securely link secondary devices (Web, Desktop, or secondary Mobile) by scanning an encrypted QR code using the primary mobile device.
+    - **Biometric Security Authorization**: Require device biometric verification (Fingerprint / Face ID / Passcode via `LocalAuthentication`) before approving incoming login sessions.
+    - **Real-Time Lifecycle Tracking**: Live Firestore handshake tracking session status (`pending` -> `scanned` -> `approved` / `rejected` / `expired`) with device identification (OS, device name, IP, timestamp).
+    - **Time Drift Resilience**: Implemented a 5-minute clock-skew tolerance buffer and extended QR lifetime to 5 minutes to prevent false-positive expirations across devices with desynchronized clocks.
+- **UX: Seamless Non-Password Auth Bypass (ข้ามการอัปเกรดบัญชีอัตโนมัติ)**:
+    - Automatically detect modern authentication providers (`Google`, `QR Code`, and linked third-party sessions).
+    - Users authenticated via Google or QR code directly navigate to `TabsScreen` without being interrupted by legacy username migration prompts.
+- **UI: Synchronized Floating Action Button (Create Post FAB)**:
+    - The "Create Post" Floating Action Button on both `HomeScreen` and `FeedScreen` now smoothly animates and hides (`AnimatedSlide` & `AnimatedOpacity`) in unison with the Top AppBar and Bottom Navigation Bar as the user scrolls through content.
+- **Security: Hardened Production Cloud Firestore Security Rules**:
+    - Deployed zero-trust rules for `login_sessions` with ownership checks and expiration constraints.
+    - Protected user subcollections (`friends`, `notifications`, `saved_posts`) and feed interactions.
+
+### Fixed
+- **UI: RenderFlex Overflow on Compact Screens**:
+    - Wrapped login mode switch tabs in `FittedBox` on `LoginScreen`.
+    - Converted static QR error & retry container to responsive scrollable layout.
+- **Navigation: Multiple Heroes Tag Collision**:
+    - Removed duplicate `FloatingActionButton` Hero animation tags across `IndexedStack` pages to prevent scheduler assertions during route transitions.
+
 ## [2.7.0+30] - 2026-09-16
 
 ### Added
